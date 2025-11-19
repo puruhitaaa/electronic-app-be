@@ -77,3 +77,14 @@ bun run dev
 ```
 
 open http://localhost:3000
+
+## OpenAPI + Swagger UI
+
+This project uses `zod` and `@hono/zod-openapi` to validate request schemas and auto-generate an OpenAPI spec. The spec is mounted at `/doc` and Swagger UI is served at `/ui`.
+
+- Install packages: `bun install` (or `npm install` if you prefer npm)
+- Start server: `bun run dev`
+- Open the auto-generated OpenAPI JSON at `http://localhost:3000/doc`
+- View Swagger UI at `http://localhost:3000/ui`
+
+Note: TypeScript handler return types used by `@hono/zod-openapi` can be strict; this project parses request bodies with Zod and uses `TypedResponse<...>` returns to keep strong types and avoid `as any` casts.
