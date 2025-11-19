@@ -1,7 +1,7 @@
 import { OpenAPIHono, createRoute, z } from "@hono/zod-openapi"
 import { swaggerUI } from "@hono/swagger-ui"
 import { db } from "./db/index"
-import type { Context } from "hono"
+import { type Context } from "hono"
 import { products, categories, suppliers } from "./db/schema"
 import { eq } from "drizzle-orm"
 
