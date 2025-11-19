@@ -123,7 +123,7 @@ app.openapi(CreateProductRoute, async (c: Context) => {
 
 // Get by id
 const ProductParams = z.object({
-  id: z.number().openapi({
+  id: z.coerce.number().openapi({
     param: { name: "id", in: "path" },
     example: 1,
   }),
@@ -289,7 +289,7 @@ app.openapi(CreateCategoryRoute, async (c: Context) => {
 })
 
 const CategoryParams = z.object({
-  id: z.number().openapi({ param: { name: "id", in: "path" } }),
+  id: z.coerce.number().openapi({ param: { name: "id", in: "path" } }),
 })
 const GetCategoryRoute = createRoute({
   method: "get",
@@ -434,7 +434,7 @@ app.openapi(CreateSupplierRoute, async (c: Context) => {
 })
 
 const SupplierParams = z.object({
-  id: z.number().openapi({ param: { name: "id", in: "path" } }),
+  id: z.coerce.number().openapi({ param: { name: "id", in: "path" } }),
 })
 const GetSupplierRoute = createRoute({
   method: "get",
